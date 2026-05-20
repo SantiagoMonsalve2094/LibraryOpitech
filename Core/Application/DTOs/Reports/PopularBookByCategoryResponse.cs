@@ -1,6 +1,6 @@
 namespace LibraryOpitech.Application.DTOs.Reports;
 
-public class MostBorrowedBookByCategoryResponse
+public class PopularBookByCategoryResponse
 {
     public Guid CategoryId { get; set; }
     public string CategoryName { get; set; } = string.Empty;

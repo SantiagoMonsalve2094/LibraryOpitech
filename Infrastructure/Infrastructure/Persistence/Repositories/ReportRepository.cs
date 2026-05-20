@@ -6,7 +6,7 @@ namespace LibraryOpitech.Infrastructure.Persistence.Repositories;
 
 public class ReportRepository(LibraryOpitechDbContext context) : IReportRepository
 {
-    public async Task<IReadOnlyCollection<MostBorrowedBookByCategoryResponse>> GetMostBorrowedBooksByCategoryAsync(CancellationToken ct = default)
+    public async Task<IReadOnlyCollection<PopularBookByCategoryResponse>> GetPopularBooksByCategoryAsync(CancellationToken ct = default)
     {
         var groupedLoans = await context.Loans
             .AsNoTracking()
@@ -25,7 +25,7 @@ public class ReportRepository(LibraryOpitechDbContext context) : IReportReposito
                 x.BookId,
                 x.BookTitle
             })
-            .Select(x => new MostBorrowedBookByCategoryResponse
+            .Select(x => new PopularBookByCategoryResponse
             {
                 CategoryId = x.Key.CategoryId,
                 CategoryName = x.Key.CategoryName,

@@ -1,0 +1,3 @@
+namespace LibraryOpitech.Application.Features.Reports.Queries.GetPopularBooksByCategory;
+
+public sealed record GetPopularBooksByCategoryQuery;

@@ -1,6 +1,6 @@
 using FluentAssertions;
 using LibraryOpitech.Application.DTOs.Reports;
-using LibraryOpitech.Application.Features.Reports.Queries.GetMostBorrowedBooksByCategory;
+using LibraryOpitech.Application.Features.Reports.Queries.GetPopularBooksByCategory;
 using LibraryOpitech.Application.Features.Reservations.Commands.CreateReservation;
 using LibraryOpitech.Application.Interfaces;
 using LibraryOpitech.Domain.Entities;
@@ -39,9 +39,9 @@ public class ReservationAndReportTests
     }
 
     [Fact]
-    public async Task ReportHandler_Should_Return_Most_Borrowed_Books_By_Category()
+    public async Task ReportHandler_Should_Return_Popular_Books_By_Category()
     {
-        var expected = new List<MostBorrowedBookByCategoryResponse>
+        var expected = new List<PopularBookByCategoryResponse>
         {
             new()
             {
@@ -54,13 +54,13 @@ public class ReservationAndReportTests
         };
 
         var reports = new Mock<IReportRepository>();
-        reports.Setup(x => x.GetMostBorrowedBooksByCategoryAsync(It.IsAny<CancellationToken>())).ReturnsAsync(expected);
+        reports.Setup(x => x.GetPopularBooksByCategoryAsync(It.IsAny<CancellationToken>())).ReturnsAsync(expected);
 
         var uow = new Mock<IUnitOfWork>();
         uow.SetupGet(x => x.Reports).Returns(reports.Object);
 
-        var handler = new GetMostBorrowedBooksByCategoryHandler(uow.Object, new GetMostBorrowedBooksByCategoryValidator());
-        var response = await handler.Handle(new GetMostBorrowedBooksByCategoryQuery());
+        var handler = new GetPopularBooksByCategoryHandler(uow.Object, new GetPopularBooksByCategoryValidator());
+        var response = await handler.Handle(new GetPopularBooksByCategoryQuery());
 
         response.Should().ContainSingle();
         response.First().BookTitle.Should().Be("Dune");

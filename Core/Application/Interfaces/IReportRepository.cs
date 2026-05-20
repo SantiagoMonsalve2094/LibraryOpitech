@@ -4,5 +4,5 @@ namespace LibraryOpitech.Application.Interfaces;
 
 public interface IReportRepository
 {
-    Task<IReadOnlyCollection<MostBorrowedBookByCategoryResponse>> GetMostBorrowedBooksByCategoryAsync(CancellationToken ct = default);
+    Task<IReadOnlyCollection<PopularBookByCategoryResponse>> GetPopularBooksByCategoryAsync(CancellationToken ct = default);
 }
