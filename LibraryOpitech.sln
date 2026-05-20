@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryOpitech.Api", "Prese
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D6D858AE-AF1C-4AEF-A1F4-86364B0CEC87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryOpitech.Application.Tests", "Tests\LibraryOpitech.Application.Tests\LibraryOpitech.Application.Tests.csproj", "{76AE8B59-25CE-4CF8-AC92-A0517686D13D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryOpitech.Application.Tests", "Tests\Application\LibraryOpitech.Application.Tests.csproj", "{76AE8B59-25CE-4CF8-AC92-A0517686D13D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
