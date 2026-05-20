@@ -1,0 +1,3 @@
+namespace LibraryOpitech.Application.Features.Reports.Queries.GetMostBorrowedBooksByCategory;
+
+public sealed record GetMostBorrowedBooksByCategoryQuery;
